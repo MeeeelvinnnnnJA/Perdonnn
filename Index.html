@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Perdón 🥺</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        button {
+            font-size: 1.2rem;
+            margin: 15px;
+            padding: 10px 25px;
+            cursor: pointer;
+            border-radius: 6px;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        #si {
+            background-color: #ff79c6;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        #si:hover {
+            background-color: #e66db2;
+        }
+
+        #no {
+            background-color: #aaa;
+            color: white;
+        }
+
+        #no:hover {
+            background-color: #888;
+        }
+
+        /* Imagen centrada */
+        #imagen {
+            display: none;       /* Oculta la imagen hasta que presionen "Sí" */
+            margin: 25px auto;   /* Centra horizontalmente */
+            max-width: 90vw;     /* Que no se salga del celular */
+            border-radius: 15px;
+            box-shadow: 0 0 10px #ff79c6;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="pregunta">¿Me perdonas porfis?</h1>
+    <button id="si">Siiii 💗</button>
+    <button id="no">No</button>
+
+    <img id="imagen" src="perdonada.png" alt="Imagen de perdón" />
+
+    <script>
+        const botonSi = document.getElementById('si');
+        const botonNo = document.getElementById('no');
+        const pregunta = document.getElementById('pregunta');
+        const imagen = document.getElementById('imagen');
+
+        let tamano = 24; // tamaño inicial del botón "Sí"
+
+        botonSi.addEventListener('click', () => {
+            pregunta.textContent = 'Esosoooo, prometo no volverlo a hacer 💗';
+            botonSi.style.display = 'none';
+            botonNo.style.display = 'none';
+            imagen.style.display = 'block';
+        });
+
+        botonNo.addEventListener('click', () => {
+            tamano += 6;
+            botonSi.style.fontSize = tamano + 'px';
+        });
+    </script>
+
+</body>
+</html>
